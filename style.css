@@ -1,0 +1,152 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fcefee; /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* === CUSTOMIZE 6: Add banner image (optional) === */
+    /* background-image: url('https://example.com/banner.png'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: top center; */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+#birthday-text {
+    font-size: 3rem;
+    color: #e91e63; /* Pink text */
+    /* This makes the typing cursor visible */
+    border-right: 2px solid #e91e63;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 30px auto;
+    /* This 'steps' value is what creates the typing effect */
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Cursor blinking animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #e91e63; }
+}
+
+.birthday-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.birthday-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover;
+    border: 5px solid #e91e63; /* Pink border */
+}
+
+.name-text {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+#message-button {
+    background-color: #e91e63; /* Pink button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#message-button:hover {
+    background-color: #c2185b; /* Darker pink on hover */
+    transform: scale(1.05);
+}
+
+/* --- Modal (Pop-up) Styles --- */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    
+    /* Fade-in animation */
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.gif-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
